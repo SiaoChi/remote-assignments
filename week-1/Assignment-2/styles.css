@@ -1,0 +1,124 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  width: 100%;
+  height: 80px;
+  background-color: white;
+  /*border-bottom: 1px solid black;*/
+  display: flex;
+  /* 水平靠右 */
+  justify-content: center;
+  /* 垂直置中 */
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo{
+  width: 20%;
+  padding: 0 40px;
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-items {
+  width: 70%;
+  list-style-type: none;
+  margin: 0px 20px;
+  text-align: right;
+  vertical-align: center;
+  justify-content: right;
+  color: #ffffff;
+
+}
+
+.nav-items a{
+  list-style: none ;
+  color:black;
+  text-decoration: none;
+}
+
+.nav-items a:hover {
+  list-style: none ;
+  color:teal;
+  font-weight: bold;
+}
+
+.nav-items li {
+  /*因為放在header裏面，所以需要使用inline-block*/
+  display: inline-block;
+  margin-left: 30px;
+  color: white;
+}
+
+.nav-items li:first-child {
+  margin-left: 0;
+}
+
+.banner {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #b0e2e8;
+  text-align: center;
+  height: 300px;
+  width: 100%;
+}
+
+.main-section {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.section-title {
+  width: 100%;
+  padding: 50px;
+}
+
+.content-box-container {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap:wrap;
+
+}
+
+.content-box {
+  /*flex:none;*/
+  margin: 8px;
+  width: 40%;
+  height: 100px;
+  padding: 3px 40px 40px 40px;
+  background-color: #f2f2f2;
+
+}
+
+.content-box h3 {
+}
+
+.call-to-action {
+  width: 100%;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+}
+
+.call-to-action button {
+  font-size: 1.2em;
+  padding: 15px 40px;
+  background-color:#b0e2e8;
+  color: #00000;
+  border: none;
+  border-radius: 5px;
+}
