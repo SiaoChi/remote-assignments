@@ -1,24 +1,35 @@
+*{
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
+  /*width: 100%;*/
+  justify-content: center;
+  align-items: center;
 }
 
 header {
+  position: fixed;
+  top:0;
   width: 100%;
-  height: 80px;
-  background-color: white;
+  height: 50px;
+  margin: 0;
+  padding: 0;
   /*border-bottom: 1px solid black;*/
   display: flex;
-  /* 水平靠右 */
+  /* 水平置中 */
   justify-content: center;
   /* 垂直置中 */
   align-items: center;
-  flex-wrap: wrap;
+  /*flex-wrap: wrap;*/
+  background-color: #d8eaf1;
 }
 
 .logo{
-  width: 20%;
-  padding: 0 40px;
+  width: 30%;
+  padding: 0 20px;
   display: inline-block;
   justify-content: center;
   align-items: center;
@@ -26,19 +37,42 @@ header {
 
 .nav-items {
   width: 70%;
-  list-style-type: none;
-  margin: 0px 20px;
-  text-align: right;
-  vertical-align: center;
   justify-content: right;
-  color: #ffffff;
+  /*刪除inline block中的空白*/
+  /*font-size: 0;*/
+  /* 垂直置中 設定line-height跟header的height一樣，上下才會對齊header*/
+  /*line-height: 50px;*/
+  /*padding-right: 10px;*/
 
+}
+
+ul{
+  justify-content: right;
+}
+
+.nav-items li {
+  /*因為要放在同一行，所以需要使用inline-block*/
+  display: inline-block;
+  width: 150px;
+  /*background-color: #ffffff;*/
+  text-align: right;
+  /* 在nav items把文字大小設定為0，這裡重新設定字體大小，以避免影響內部的元素 */
+  font-size: 16px;
+  /* 上下對齊 header : li元素的vertical-align屬性設定為top，以使其與header的上邊緣對齊。這可以確保li元素的內容在nav-items元素中垂直對齊header，以便在外觀上看起來更整齊。*/
+  vertical-align: top;
+
+}
+
+.nav-items ul{
+  text-align: right;
+  margin-right: 50px;
 }
 
 .nav-items a{
   list-style: none ;
-  color:black;
+  color: #b64040;
   text-decoration: none;
+  font-weight: bold;
 }
 
 .nav-items a:hover {
@@ -47,30 +81,18 @@ header {
   font-weight: bold;
 }
 
-.nav-items li {
-  /*因為放在header裏面，所以需要使用inline-block*/
-  display: inline-block;
-  margin-left: 30px;
-  color: white;
-}
-
-.nav-items li:first-child {
-  margin-left: 0;
-}
 
 .banner {
-  margin: 0;
+  margin-top: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #b0e2e8;
   text-align: center;
   height: 300px;
-  width: 100%;
 }
 
 .main-section {
-  width: 1200px;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
@@ -80,30 +102,34 @@ header {
 }
 
 .section-title {
+  padding: 30px 0px;
   width: 100%;
-  padding: 50px;
 }
 
 .content-box-container {
-  width: 80%;
+  width: 1200px;
+  /*min-width: 600px;*/
   display: flex;
+  flex-wrap:wrap;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  flex-wrap:wrap;
 
 }
 
 .content-box {
-  /*flex:none;*/
-  margin: 8px;
-  width: 40%;
-  height: 100px;
+  flex:none;
+  margin: 15px;
+  width: 420px;
+  min-width: 380px;
+  height: 120px;
   padding: 3px 40px 40px 40px;
-  background-color: #f2f2f2;
+  background-color: #e7c7c7;
 
 }
 
 .content-box h3 {
+  margin-top: 5px;
 }
 
 .call-to-action {
@@ -122,3 +148,38 @@ header {
   border: none;
   border-radius: 5px;
 }
+
+.call-to-action button:hover {
+  background-color:palevioletred;
+}
+
+
+@media screen and (max-width:500px){
+    /*  螢幕寬度 < 500px，套用這個區塊的css*/
+  .banner{
+    min-width: 400px;
+
+  }
+  .content-box{
+    min-width: 400px;
+    height: 180px;
+  }
+  header{
+    height: auto;
+  }
+  .nav-items li{
+    width: 60px;
+    font-size: 1em;
+  }
+  .logo{
+    margin-left: 10px
+  }
+
+}
+
+@media screen and (min-width:1000px){
+  body{
+    background-color:lightyellow;
+  }
+}
+
