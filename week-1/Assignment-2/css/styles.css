@@ -1,74 +1,63 @@
+/* =================================
+  Base Element Styles
+==================================== */
+
 *{
   box-sizing: border-box;
 }
 
 body {
-  margin: 0;
+  /* margin 0 auto 可以讓左右置中*/
+  margin: 0 auto;
   padding: 0;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
   justify-content: center;
-  align-items: center;
 }
 
-header {
+
+/* =================================
+  Base Layout Styles
+==================================== */
+
+/* ---- Navigation ---- */
+
+.main-header {
+  width: 100%;
+  margin: 0 auto;
   position: fixed;
   top:0;
-  width: 100%;
-  height: auto;
-  margin: 0;
-  padding: 0;
-  /*border-bottom: 1px solid black;*/
   display: flex;
-  /* 水平置中 */
-  justify-content: space-around;
+  /* logo跟nav分開，一左一右 */
+  justify-content: space-between;
   /* 垂直置中 */
   align-items: center;
   /*flex-wrap: wrap;*/
   background-color: #d8eaf1;
 }
 
-/* 分開menu的items作法：
-/*logo可以使用 margin-right:auto,搭配母容器justify:space-around來分開item*/
-
 .logo{
-  /*width: 10%;*/
-  margin-right: auto;
-  padding: 0 20px;
-  /*display: inline-block;*/
+  padding: 10px 20px;
+  font-size: 1.35em;
 }
 
-/*.nav-items {*/
-  /*width: 90%;*/
-  /*justify-content: right;*/
-  /*刪除inline block中的空白*/
-  /*font-size: 0;*/
-  /* 垂直置中 設定line-height跟header的height一樣，上下才會對齊header*/
-  /*line-height: 50px;*/
-  /*padding-right: 10px;*/
-/*}*/
-
-ul{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: right;
-}
-
-.nav-items li {
-  /*因為要放在同一行，所以需要使用inline-block*/
-  display: inline-block;
-  width: 110px;
-  /*background-color: #ffffff;*/
-  text-align: right;
-  /* 在nav items把文字大小設定為0，這裡重新設定字體大小，以避免影響內部的元素 */
-  font-size: 16px;
-  /* 上下對齊 header : li元素的vertical-align屬性設定為top，以使其與header的上邊緣對齊。這可以確保li元素的內容在nav-items元素中垂直對齊header，以便在外觀上看起來更整齊。*/
-  vertical-align: top;
-
-}
 
 .nav-items ul{
-  text-align: right;
-  margin-right: 50px;
+  display: flex;
+  margin-right: 30px;
+}
+
+.nav-items ul li {
+  /*因為要放在同一行，所以需要使用inline-block*/
+  display: inline-block;
+  width: 100px;
+  /*background-color: #ffffff;*/
+  text-align: center;
+  /* 在nav items把文字大小設定為0，這裡重新設定字體大小，以避免影響內部的元素 */
+  font-size: 16px;
+
 }
 
 .nav-items a{
@@ -84,19 +73,26 @@ ul{
   font-weight: bold;
 }
 
+/* ---- Layout Containers ---- */
+
+
 
 .banner {
+  /*配合fixed nav，需要往下50px*/
+  width: 100%;
   margin-top: 50px;
+  height: 40vh;
+
+  /*讓裡面的子項目上下左右置中*/
   display: flex;
   align-items: center;
   justify-content: center;
+
+  /*decoration*/
   background-color: #b0e2e8;
-  text-align: center;
-  height: 300px;
 }
 
 .main-section {
-  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -106,13 +102,11 @@ ul{
 
 .section-title {
   padding: 30px 0px;
-  width: 100%;
+  width: 1200px;
 }
 
 .content-box-container {
   width: 1200px;
-  /*min-width: 600px;*/
-  /*height: 如果有限制高度的話，會因為高度的關係去改變排列*/
   display: flex;
   flex-wrap:wrap;
   flex-direction: row;
@@ -122,12 +116,10 @@ ul{
 }
 
 .content-box {
-  flex:none;
   margin: 15px;
   width: 420px;
-  min-width: 380px;
-  height: 120px;
-  padding: 3px 40px 40px 40px;
+  min-width: 350px;
+  height: 180px;
   background-color: #e7c7c7;
 
 }
@@ -159,32 +151,34 @@ ul{
 
 
 @media screen and (max-width:500px){
-    /*  螢幕寬度 < 500px，套用這個區塊的css*/
+    /*  最大寬度700px以下套用，螢幕寬度 < 700px，套用這個區塊的css*/
   .banner{
-    min-width: 400px;
+    margin-top: 96px;
+    min-width: 100vw;
 
   }
-  .content-box{
-    min-width: 400px;
-    height: 180px;
-  }
-  header{
+
+  .main-header{
     height: auto;
-  }
-  .nav-items li{
-    width: 80px;
-    font-size: 1em;
-    text-align: left;
-  }
-  .logo{
-    margin-left: 10px
+    flex-direction: column;
+    justify-content: center;
+
   }
 
-}
+  .content-box{
+    width: 80%;
+  }
 
-@media screen and (min-width:1000px){
-  body{
-    background-color:lightyellow;
+  .nav-items ul{
+    justify-content: center;
+
   }
 }
+
+/*@media screen and (min-width:1000px){*/
+  /*  最小要1000px才能套用 --> 螢幕寬度 > 1000px，套用這個區塊的css*/
+/*  body{*/
+
+/*  }*/
+/*}*/
 
