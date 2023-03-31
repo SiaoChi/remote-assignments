@@ -5,7 +5,7 @@
 body {
   margin: 0;
   padding: 0;
-  /*width: 100%;*/
+  width: 100%;
   justify-content: center;
   align-items: center;
 }
@@ -14,46 +14,49 @@ header {
   position: fixed;
   top:0;
   width: 100%;
-  height: 50px;
+  height: auto;
   margin: 0;
   padding: 0;
   /*border-bottom: 1px solid black;*/
   display: flex;
   /* 水平置中 */
-  justify-content: center;
+  justify-content: space-around;
   /* 垂直置中 */
   align-items: center;
   /*flex-wrap: wrap;*/
   background-color: #d8eaf1;
 }
 
+/* 分開menu的items作法：
+/*logo可以使用 margin-right:auto,搭配母容器justify:space-around來分開item*/
+
 .logo{
-  width: 30%;
+  /*width: 10%;*/
+  margin-right: auto;
   padding: 0 20px;
-  display: inline-block;
-  justify-content: center;
-  align-items: center;
+  /*display: inline-block;*/
 }
 
-.nav-items {
-  width: 70%;
-  justify-content: right;
+/*.nav-items {*/
+  /*width: 90%;*/
+  /*justify-content: right;*/
   /*刪除inline block中的空白*/
   /*font-size: 0;*/
   /* 垂直置中 設定line-height跟header的height一樣，上下才會對齊header*/
   /*line-height: 50px;*/
   /*padding-right: 10px;*/
-
-}
+/*}*/
 
 ul{
+  display: flex;
+  flex-wrap: wrap;
   justify-content: right;
 }
 
 .nav-items li {
   /*因為要放在同一行，所以需要使用inline-block*/
   display: inline-block;
-  width: 150px;
+  width: 110px;
   /*background-color: #ffffff;*/
   text-align: right;
   /* 在nav items把文字大小設定為0，這裡重新設定字體大小，以避免影響內部的元素 */
@@ -70,7 +73,7 @@ ul{
 
 .nav-items a{
   list-style: none ;
-  color: #b64040;
+  color: #000e10;
   text-decoration: none;
   font-weight: bold;
 }
@@ -109,6 +112,7 @@ ul{
 .content-box-container {
   width: 1200px;
   /*min-width: 600px;*/
+  /*height: 如果有限制高度的話，會因為高度的關係去改變排列*/
   display: flex;
   flex-wrap:wrap;
   flex-direction: row;
@@ -168,8 +172,9 @@ ul{
     height: auto;
   }
   .nav-items li{
-    width: 60px;
+    width: 80px;
     font-size: 1em;
+    text-align: left;
   }
   .logo{
     margin-left: 10px
