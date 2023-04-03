@@ -4,7 +4,7 @@ This project has deployed to this url https://siaochi.github.io/remote-assignmen
 
 <h2>week-1</h2>
 
-<h3>assignment2- RWD practice</h3>
+<h3>❶assignment2- RWD practice</h3>
 demo url : https://siaochi.github.io/remote-assignments/week-1/Assignment-2/index.html
 
-<h3>assignment1- Javascript練習</h3>
+<h3>❷assignment3- Javascript練習</h3>
