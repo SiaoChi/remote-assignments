@@ -1,20 +1,10 @@
 
-
-const banner = document.querySelector(".banner")
-const banner_txt = document.querySelector("#banner-txt")
-banner.addEventListener('click',()=>{
-    banner_txt.innerHTML ='Have a Good Time!';
-    console.log('click the banner!')
-    }
-);
-
-const button = document.querySelector("#btn")
-const hideArea = document.querySelector(".content-box-container-2")
-
-button.addEventListener('click',()=> {
-    if(hideArea.style.display === 'none'){
-        hideArea.style.display = "flex"}
-    else{
-        hideArea.style.display = "none"
-    }
+//when hero-banner was clicked, 'Hello World' will changed to 'Good time'.
+$('.banner').on('click', function() {
+$('#banner-txt').text('Good time');
 })
+
+//when btn was clicked, the hided area will be showed.
+$('#btn').on('click', function() {
+$('.content-box-container-2').css('display','flex');
+});

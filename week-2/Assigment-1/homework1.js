@@ -4,8 +4,11 @@
 The position should be counted starting from 0, if you can't find the target, please return -1 */
 
 function max(numbers) {
-    let _max = 0;
-    for (let i = 0 ; i < numbers.length ; i++){
+    if (numbers.length === 0) {
+        return null
+    }
+    let _max = numbers[0];
+    for (let i = 1 ; i < numbers.length ; i++){
         if(numbers[i] > _max){
             _max = numbers[i]
         }
@@ -24,7 +27,11 @@ function findPosition(numbers, target) {
 }
 
 console.log(max([1, 2, 4, 5])); // should print 5
-console.log(max([5, 2, 7, 1,]));// should print 5
+console.log(max([5, 2, 7, 1,]));// should print 7
+console.log(max([-4,-19,-4,-5])); // should print -4
+
+
+console.log(max([])); // should print null
 
 console.log(findPosition([5,2,7,1,6],5)) //should print 0
 console.log(findPosition([5,2,7,1,6],7)) //should print 2
