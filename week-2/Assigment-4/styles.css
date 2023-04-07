@@ -1,0 +1,184 @@
+/* =================================
+  Base Element Styles
+==================================== */
+
+*{
+  box-sizing: border-box;
+}
+
+body {
+  /* margin 0 auto 可以讓左右置中*/
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+
+
+/* =================================
+  Base Layout Styles
+==================================== */
+
+/* ---- Navigation ---- */
+
+.main-header {
+  width: 100%;
+  margin: 0 auto;
+  position: fixed;
+  top:0;
+  display: flex;
+  /* logo跟nav分開，一左一右 */
+  justify-content: space-between;
+  /* 垂直置中 */
+  align-items: center;
+  /*flex-wrap: wrap;*/
+  background-color: #d8eaf1;
+}
+
+.logo{
+  padding: 10px 20px;
+  font-size: 1.35em;
+}
+
+
+.nav-items ul{
+  display: flex;
+  margin-right: 30px;
+}
+
+.nav-items ul li {
+  /*因為要放在同一行，所以需要使用inline-block*/
+  display: inline-block;
+  width: 100px;
+  /*background-color: #ffffff;*/
+  text-align: center;
+  /* 在nav items把文字大小設定為0，這裡重新設定字體大小，以避免影響內部的元素 */
+  font-size: 16px;
+
+}
+
+.nav-items a{
+  list-style: none ;
+  color: #000e10;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-items a:hover {
+  list-style: none ;
+  color:teal;
+  font-weight: bold;
+}
+
+/* ---- Layout Containers ---- */
+
+
+
+.banner {
+  /*配合fixed nav，需要往下50px*/
+  width: 100%;
+  margin-top: 50px;
+  height: 40vh;
+
+  /*讓裡面的子項目上下左右置中*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /*decoration*/
+  background-color: #b0e2e8;
+}
+
+.main-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.section-title {
+  padding: 30px 0px;
+  width: 1200px;
+}
+
+.content-box-container {
+  width: 1200px;
+  display: flex;
+  flex-wrap:wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.content-box {
+  margin: 15px;
+  width: 420px;
+  min-width: 350px;
+  height: 180px;
+  background-color: #e7c7c7;
+
+}
+
+.content-box h3 {
+  margin-top: 5px;
+}
+
+.call-to-action {
+  width: 100%;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+}
+
+.call-to-action button {
+  font-size: 1.2em;
+  padding: 15px 40px;
+  background-color:#b0e2e8;
+  color: #00000;
+  border: none;
+  border-radius: 5px;
+}
+
+.call-to-action button:hover {
+  background-color:palevioletred;
+}
+
+
+@media screen and (max-width:500px){
+    /*  最大寬度700px以下套用，螢幕寬度 < 700px，套用這個區塊的css*/
+  .banner{
+    margin-top: 96px;
+    min-width: 100vw;
+
+  }
+
+  .main-header{
+    height: auto;
+    flex-direction: column;
+    justify-content: center;
+
+  }
+
+  .content-box{
+    width: 80%;
+  }
+
+  .nav-items ul{
+    justify-content: center;
+
+  }
+}
+
+/*@media screen and (min-width:1000px){*/
+  /*  最小要1000px才能套用 --> 螢幕寬度 > 1000px，套用這個區塊的css*/
+/*  body{*/
+
+/*  }*/
+/*}*/
+
