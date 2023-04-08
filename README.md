@@ -12,7 +12,7 @@ demo url : https://siaochi.github.io/remote-assignments/week-1/Assignment-2/inde
 <h2>week-2</h2>
 
 <ul>
-  <li>❶❷❸js運算式練習</li>
- <li>❹dom.js練習</li>
- <li>❺binary search練習</li>
+ <p>❶❷❸js運算式練習</p>
+ <p>❹dom.js練習</p>
+ <p>❺binary search練習</p>
 </ul>
