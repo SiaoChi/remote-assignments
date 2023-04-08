@@ -26,7 +26,7 @@ function groupByKey(input) {
     ans = {};
     for (let i = 0 ; i < input.length ; i++){
         if(ans[input[i].key]){
-            ans[input[i].key] = ans[input[i].key] + input[i].value
+            ans[input[i].key] += input[i].value
         }
         else{
             ans[input[i].key] = input[i].value
