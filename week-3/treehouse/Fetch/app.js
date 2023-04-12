@@ -13,6 +13,8 @@ function checkStatus(res){
         return Promise.resolve(res)
     }
     else{
+        console.log(res.status)
+        console.log(res)
         return Promise.reject(new Error(res.statusText));
     }
 }
@@ -21,20 +23,21 @@ function checkStatus(res){
 //用了這個function反而使其他使用這個function的功能有bug
 function fetchData(url){
     return fetch(url)
-        .then(res=> checkStatus)
+        .then(checkStatus)
         .then(res=> res.json())
         .catch(error => console.log('回傳錯誤',error))
 };
 
 Promise.all(
-    //如果console.log（data)，會看到每串API回傳的結果以list的方式回傳[{message:xxx},{...}]
+    //如果console.log（data)，會看到每串API回傳的結果以list的方式回傳respone =>.json()=> [{message:xxx},{...}]
     [
-        fetch('https://dog.ceo/api/breeds/list'),
-        fetch('https://dog.ceo/api/breeds/image/random')
+        fetchData('https://dog.ceo/api/breeds/list'),
+        fetchData('https://dog.ceo/api/breeds/image/random')
     ]
 )
-    .then(responses => Promise.all(responses.map(response => response.json())))
     // .then(checkStatus)
+    // .then(response => console.log(response))
+    // .then(responses => Promise.all(responses.map(response => response.json())))
     .then(data => {
         console.log(data);
         const breedList = data[0].message;
