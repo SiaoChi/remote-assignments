@@ -15,3 +15,9 @@ This project has deployed to this url https://siaochi.github.io/remote-assignmen
  <p>❹dom.js練習:https://siaochi.github.io/remote-assignments/week-2/Assigment-4/index.html</p>
  <p>❺binary search練習</p>
 
+<h2>week-3</h2>
+<p>1.建立一個express server port:3000</p>
+<p>2.練習get api回應前端</p>
+<p>3.練習fetch-從前端輸入數字，後端回應答案</p>
+<p>4.練習建立cookies，把前端要建立的cookie key/value傳到後端儲存後，後端偵測cookie是否存在，再給予下一步網站結果</p>
+<p>5.two sum</p>
