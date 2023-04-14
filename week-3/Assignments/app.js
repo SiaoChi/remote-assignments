@@ -27,7 +27,7 @@ app.get('/data',(req,res)=>{
         res.send("<h1>請輸入正整數數字</h1>")
     }else{
         const sum = (1 + number) * number /2
-        res.send(`<h1>數字總和為${sum}</h1>`)
+        res.send(`<h1>數字總和為${sum}(修改測試)</h1>`)
     }
 })
 
