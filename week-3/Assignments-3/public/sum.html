@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>week-3</title>
+</head>
+<body>
+    <form id="myForm" method="get">
+      <label for="number">請輸入數字：</label>
+      <input type="text" id="number" name="number" placeholder="輸入數字...">
+      <button id="btn" type="submit">提交</button>
+    </form>
+    <div id="ans">
+    </div>
+    <!--Assignment-3 AJAX-->
+    <script>
+    const form = document.getElementById("myForm");
+    const ans = document.getElementById("ans");
+
+    form.addEventListener('submit',(e)=>{
+      e.preventDefault(); // 防止默認提交
+      const formData = new FormData(form);
+      const url = `http://127.0.0.1:3000/data?number=${formData.get("number")}`;
+      fetch(url)
+        .then(res => res.text())
+        .then(data => {
+          ans.innerHTML = data;
+        });
+    })
+    </script>
+</body>
+</html>

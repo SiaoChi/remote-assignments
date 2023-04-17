@@ -24,16 +24,6 @@ form.addEventListener('submit', (e) => {
     }
 
     fetch(url, config)
-        // .then(res => {
-        //     if (res.status === 200) {
-        //         //也可以使用window.location.replace(`http://127.0.0.1:3000/${username}`)
-        //         window.location.href = `http://127.0.0.1:3000/${username}`;
-        //
-        //         console.log('回傳status = 200');
-        //     } else {
-        //         console.log('回傳status != 200');
-        //     }
-        // });
-
+        .catch(err => console.log(err))
     submitBtn.disabled = false;
 })
