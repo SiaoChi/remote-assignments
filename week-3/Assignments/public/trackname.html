@@ -5,9 +5,9 @@
     <title>Title</title>
 </head>
 <body>
-<form id="myform" method="post">
-    <label for="username">請輸入你的名字才能進入網站</label>
-        <input type="text" id="username" name="name" placeholder="請輸入名字">
+<h3>請輸入你的名字才能進入網站</h3>
+<form id="myform" method="get" action="/trackname">
+        <input type="text" name="name" placeholder="請輸入名字">
         <button id="btn" type="submit">Submit</button>
 </form>
 <script src="browser.js"></script>
