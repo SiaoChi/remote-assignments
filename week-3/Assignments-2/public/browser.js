@@ -2,7 +2,7 @@ const form = document.getElementById("myform");
 const inputele = form.querySelector('input');
 
 form.addEventListener('submit', (e) => {
-    e.preventDefault();
+    // e.preventDefault();
 
     if(!inputele.value.length){
         alert('請輸入名字');

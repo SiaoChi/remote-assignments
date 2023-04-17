@@ -17,7 +17,7 @@ app.use(express.static('./public'))
 
 //Assignment-2 設定url response sum
 app.get('/',(req,res)=>{
-    //＿＿dirname = 絕對路徑，Users/KellyGuo/appworks/remote-assignments/week-3/Assignments
+    //＿＿dirname = 絕對路徑，Users/KellyGuo/appworks/remote-assignments/week-3/Assignments-2
     //須解釋resolve
     res.sendFile(path.resolve(__dirname, './public/sum.html'))
 })
@@ -38,14 +38,13 @@ app.get('/data',(req,res)=>{
 
 
 app.get('/myname',(req,res)=>{
-    console.log('----收到 myname get----')
+    console.log('----myname get----')
     const { name } = req.cookies
     console.log("----")
     console.log(name)
 
     if(name){
         console.log(`你名字是${name}`)
-        // res.redirect("/")
         const html = `<html><h1>你的名字是 ${name}</h1></html>`;
         return res.send(html);
         // res.sendFile(path.resolve(__dirname, './public/myname.html'), { name: name });
@@ -56,14 +55,16 @@ app.get('/myname',(req,res)=>{
 })
 
 app.get('/trackName',(req,res)=>{
-    console.log('----收到 trackname get----')
+    console.log('----trackname get----')
     const { name } = req.query
     if(name){
          res.cookie('name', name)
     } else{
         res.sendFile(path.resolve(__dirname,'./public/trackname.html'))
     }
-    return res.redirect(307,'/myname')
+    console.log('redirect to /myname')
+    res.redirect(307,'/myname')
+
 })
 
 app.all('*', (req, res) => {
