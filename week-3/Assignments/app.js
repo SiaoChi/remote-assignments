@@ -41,7 +41,7 @@ app.get('/data',(req,res)=>{
 app.get('/:myName',(req,res)=>{
     console.log('----app.get----')
     // console.log('req params: ' + req.params) // { myName: 'kelly' }
-    // console.log('Cookies: ', req.cookies)
+    console.log('Cookies: ', req.cookies)
     // const username = req.cookies.username; //Cookies:  { csrftoken: 'lXg9QcohSul2QdbUeezTeeo2TOBTXRxS' }
     const { username } = req.cookies
     const { myName } = req.params; //取出url的:myName
