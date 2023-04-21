@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        p{
+            color: red;
+        }
+        body{
+            display : flex;
+            flex-wrap: wrap;
+            align-content: center;
+            justify-content: center;
+        }
+        div{
+            margin: 2em;
+            padding: 1em;
+            width: 300px;
+        }
+    </style
+</head>
+<body>
+<div>
+    <h2 >Sign in</h2>
+    <p id="signinMsg"></p>
+    <form id="sign-in-form" method="post" >
+    <label for="sign-in-email"></label>
+    <input type="email" id="sign-in-email" name="email" required>
+    <br>
+    <label for="sign-in-password"></label>
+    <input type="password" id="sign-in-password" name="password" required>
+    <br><br>
+    <button  type="submit">submit</button>
+    </form>
+</div>
+
+<div>
+        <h2>Sign up</h2>
+        <p id="signupMsg"></p>
+        <form id="sign-up-form" method="post">
+        <label for="sign-up-email"></label>
+        <input type="email" id="sign-up-email" name="email" required>
+        <br>
+        <label for="sign-up-password"></label>
+        <input type="password" id="sign-up-password" name="password" required>
+        <br><br>
+        <button type="submit">submit</button>
+        </form>
+</div>
+
+<script src="browser.js">
+</script>
+</body>
+</html>
