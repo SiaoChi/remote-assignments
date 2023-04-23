@@ -4,7 +4,7 @@
 
 SELECT * , user.email AS author_email
 FROM article
-JOIN user ON article.author_id = user.id;
+INNER JOIN user ON article.author_id = user.id;
 
 -- 2. Write another SQL statement to select articles from 7th to 12th sorted by id.
 

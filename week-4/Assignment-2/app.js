@@ -5,28 +5,40 @@ Complete the functions below to make AJAX call to a URL by GET method,
 */
 
 
+const body = document.querySelector('body')
+const div = document.querySelector('div')
 
-function ajax(url, callback) { // your code here
+body.addEventListener('onload', ()=>{
+        ajax( 'https://remote-assignment.s3.ap-northeast-1.amazonaws.com/products', function (response) {
+render(response); }
+)
+    })
+
+function render(data) {
+let content = '';
+for (let i = 0 ; i < data.length ; i++){
+content += `<div class="card" style="width: 18rem;">
+           <div class="card-body">
+           <h5 class="card-title">${data[i].name}</h5>
+           <h6 class="card-subtitle mb-2 text-body-secondary">${data[i].price}</h6>
+           <p class="card-text">${data[i].description}</p>
+           </div>
+           </div>`;
+}
+div.insertAdjacentHTML("afterbegin", content);
+console.log(content);
+}
+
+    function ajax(url, callback) { // your code here
     fetch(url)
         .then(res => res.json())
-        .then(console.log)
-        .then(callback)
+        .then(data => {
+            console.log(data);
+            callback(data);
+        })
         .catch(err => console.log(err))
 }
 
-
-function render(data) {
-let newDiv = document.createElement("div")
-for (let i = 0 ; i < data.length ; i++){
-   const prodcut = `<h2>data[i].name</h2>
-            <p>data[i].price</p>
-            <p>data[i].description</p><hr>`;
-   newDiv.appendChild(prodcut)
-}
-console.log(newDiv);
-body.innerHTML = newDiv;
-
-}
 
 ajax( 'https://remote-assignment.s3.ap-northeast-1.amazonaws.com/products', function (response) {
 render(response); }
