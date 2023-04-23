@@ -4,16 +4,18 @@ const path = require("path");
 const pool = require("../database")
 
 
+// home page
 router.get('/', (req , res) =>
     res.sendFile(path.resolve(__dirname, '../public/index.html')))
 
+// member page | sign in page
 router.get('/member',(req,res)=>{
     res.send('登入成功，歡迎你')
 })
 
+// sign in
 router.post('/signin', async (req, res) => {
   console.log('收到sign in資料');
-
   const { email , password } = req.body;
   console.log(`${email} , ${password}`)
   const [row] = await pool.query(`SELECT * FROM user WHERE email = ? AND password = ?` , [email,password]);
@@ -29,6 +31,7 @@ router.post('/signin', async (req, res) => {
     }
 });
 
+// sign up
 router.post('/signup',  async (req, res) => {
   const { email , password } = req.body;
   const [row] = await pool.query(`SELECT * FROM user WHERE email = ?`, [email]);
