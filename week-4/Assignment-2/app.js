@@ -26,17 +26,14 @@ content += `<div class="card" style="width: 18rem;">
            </div>`;
 }
 div.insertAdjacentHTML("afterbegin", content);
-console.log(content);
 }
 
-    function ajax(url, callback) { // your code here
+    function ajax(url, callback) {
     fetch(url)
         .then(res => res.json())
-        .then(data => {
-            console.log(data);
-            callback(data);
-        })
+        .then(callback)
         .catch(err => console.log(err))
+        .finally(console.log('ajax finally'))
 }
 
 
